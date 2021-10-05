@@ -8,6 +8,9 @@ class SubjectExample4(lifecycle: Lifecycle) : BaseLifecycleObserver(lifecycle) {
 
     private val asyncSubject: AsyncSubject<String> = AsyncSubject.create()
 
+    /**
+     * Пример работы AsyncSubject, отправляется последнее событие, только после вызова onComplete()
+     */
     override fun run() {
         asyncSubject.onNext("T1")
         asyncSubject.onNext("T2")
