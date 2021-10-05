@@ -6,6 +6,8 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.core.ObservableEmitter
+import io.reactivex.rxjava3.core.ObservableOnSubscribe
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
@@ -102,8 +104,36 @@ class ObservableExample1 : LifecycleObserver {
         })
     }
 
+    /**
+     * Создаем последовательность с помощью оператора create
+     * Emmiter делаем глобальным, чтобы можно было генерировать события вне метода subscribe()
+     */
+    private var emmiter: ObservableEmitter<String>? = null
+    fun runExample4() {
+        val observableCreate = Observable.create(object : ObservableOnSubscribe<String> {
+
+            override fun subscribe(emitter: ObservableEmitter<String>) {
+                this@ObservableExample1.emmiter = emitter
+                emmiter?.setDisposable(disposable)
+                emitter.onNext("One")
+                emitter.onNext("Two")
+                emitter.onNext("Three")
+            }
+
+        })
+        observableCreate.subscribe(observer)
+        emmiter?.let {
+            it.onNext("Four")
+            it.onComplete()
+
+            // Это событие не отправиться, так как поток завершился (ранее был вызван onComplete())
+            it.onNext("Five")
+        }
+    }
+
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     private fun onDestroy() {
+
         disposable?.dispose()
     }
 }
