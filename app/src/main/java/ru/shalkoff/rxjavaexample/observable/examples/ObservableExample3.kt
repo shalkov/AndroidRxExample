@@ -1,4 +1,4 @@
-package ru.shalkoff.rxjavaexample.observable
+package ru.shalkoff.rxjavaexample.observable.examples
 
 import android.util.Log
 import androidx.lifecycle.Lifecycle
@@ -8,6 +8,7 @@ import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import ru.shalkoff.rxjavaexample.Constants
+import ru.shalkoff.rxjavaexample.observable.BaseLifecycleObserver
 import java.util.concurrent.Callable
 import java.util.concurrent.TimeUnit
 

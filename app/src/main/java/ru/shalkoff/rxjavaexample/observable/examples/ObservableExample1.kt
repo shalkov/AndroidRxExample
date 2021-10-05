@@ -1,4 +1,4 @@
-package ru.shalkoff.rxjavaexample
+package ru.shalkoff.rxjavaexample.observable.examples
 
 import androidx.lifecycle.Lifecycle
 import io.reactivex.rxjava3.core.Observable
@@ -16,7 +16,7 @@ class ObservableExample1(lifecycle: Lifecycle) : BaseLifecycleObserver(lifecycle
             .concatMap {
                 Observable.just(it).delay(1L, TimeUnit.SECONDS)
             }
-        observable.subscribe(getCommonObserver())
+        observable.subscribe(getObserver())
     }
 }
 

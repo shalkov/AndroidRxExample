@@ -6,7 +6,7 @@ import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
 import ru.shalkoff.rxjavaexample.Constants
 
-class BaseCommonObserver(disposableList: CompositeDisposable){
+class BaseStringObserver(disposableList: CompositeDisposable){
 
     val observer: Observer<String> = object : Observer<String> {
 

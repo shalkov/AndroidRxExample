@@ -1,10 +1,11 @@
-package ru.shalkoff.rxjavaexample.observable
+package ru.shalkoff.rxjavaexample.observable.examples
 
 import androidx.lifecycle.Lifecycle
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.ObservableEmitter
 import io.reactivex.rxjava3.core.ObservableOnSubscribe
 import io.reactivex.rxjava3.disposables.Disposable
+import ru.shalkoff.rxjavaexample.observable.BaseLifecycleObserver
 
 class ObservableExample4(lifecycle: Lifecycle) : BaseLifecycleObserver(lifecycle) {
 
@@ -27,7 +28,7 @@ class ObservableExample4(lifecycle: Lifecycle) : BaseLifecycleObserver(lifecycle
             }
 
         })
-        observableCreate.subscribe(getCommonObserver())
+        observableCreate.subscribe(getObserver())
         emmiter?.let {
             it.onNext("Four")
             it.onComplete()

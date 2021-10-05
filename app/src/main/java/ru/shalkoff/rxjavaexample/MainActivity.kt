@@ -2,9 +2,7 @@ package ru.shalkoff.rxjavaexample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import ru.shalkoff.rxjavaexample.observable.ObservableExample2
-import ru.shalkoff.rxjavaexample.observable.ObservableExample3
-import ru.shalkoff.rxjavaexample.observable.ObservableExample4
+import ru.shalkoff.rxjavaexample.observable.examples.ObservableExample4
 import ru.shalkoff.rxjavaexample.observable.ObservableExample
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         runExample(observableExample)
     }
 
-    private fun runExample(observableExample: ObservableExample) {
-        observableExample.run()
+    private fun runExample(example: ObservableExample) {
+        example.run()
     }
 }

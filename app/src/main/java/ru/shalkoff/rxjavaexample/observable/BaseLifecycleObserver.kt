@@ -19,7 +19,7 @@ abstract class BaseLifecycleObserver(
     }
 
     private val disposableList = CompositeDisposable()
-    private val commonObserver = BaseCommonObserver(disposableList)
+    private val stringObserver = BaseStringObserver(disposableList)
 
     private fun registerLifecycle(lifecycle : Lifecycle){
         lifecycle.addObserver(this)
@@ -34,7 +34,7 @@ abstract class BaseLifecycleObserver(
         disposableList.addAll(disposable)
     }
 
-    fun getCommonObserver(): Observer<String> {
-        return commonObserver.observer
+    fun getObserver(): Observer<String> {
+        return stringObserver.observer
     }
 }

@@ -1,7 +1,8 @@
-package ru.shalkoff.rxjavaexample.observable
+package ru.shalkoff.rxjavaexample.observable.examples
 
 import androidx.lifecycle.Lifecycle
 import io.reactivex.rxjava3.core.Observable
+import ru.shalkoff.rxjavaexample.observable.BaseLifecycleObserver
 import java.lang.NullPointerException
 import java.util.concurrent.TimeUnit
 
@@ -20,7 +21,7 @@ class ObservableExample2(lifecycle: Lifecycle) : BaseLifecycleObserver(lifecycle
                 Observable.just(it).delay(1L, TimeUnit.SECONDS)
             }
             .retry(3)
-        observable.subscribe(getCommonObserver())
+        observable.subscribe(getObserver())
     }
 
 }
