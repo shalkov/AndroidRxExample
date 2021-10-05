@@ -9,6 +9,7 @@ import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import ru.shalkoff.rxjavaexample.Constants
 import ru.shalkoff.rxjavaexample.observable.BaseLifecycleObserver
+import ru.shalkoff.rxjavaexample.observable.RxLogger
 import java.util.concurrent.Callable
 import java.util.concurrent.TimeUnit
 
@@ -26,23 +27,22 @@ class ObservableExample3(lifecycle: Lifecycle) : BaseLifecycleObserver(lifecycle
         observable.subscribe(object : Observer<Int> {
 
             override fun onSubscribe(disposable: Disposable) {
-                Log.d(Constants.LOGGER_TAG, Constants.ON_SUBSCRIBE)
+                RxLogger.onSubscribe()
                 addDisposables(disposable)
             }
 
             override fun onNext(t: Int) {
-                Log.d(Constants.LOGGER_TAG, Thread.currentThread().name)
-                Log.d(Constants.LOGGER_TAG, t.toString())
+                RxLogger.log(Thread.currentThread().name)
+                RxLogger.log(t.toString())
             }
 
             override fun onError(e: Throwable) {
-                Log.d(Constants.LOGGER_TAG, Constants.ON_ERROR)
+                RxLogger.onError()
             }
 
             override fun onComplete() {
-                Log.d(Constants.LOGGER_TAG, Constants.ON_COMPLETE)
+                RxLogger.onComplete()
             }
-
         })
     }
 

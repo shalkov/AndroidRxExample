@@ -1,6 +1,5 @@
 package ru.shalkoff.rxjavaexample.observable
 
-import android.util.Log
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
@@ -11,20 +10,20 @@ class BaseStringObserver(disposableList: CompositeDisposable){
     val observer: Observer<String> = object : Observer<String> {
 
         override fun onSubscribe(disposable: Disposable) {
-            Log.d(Constants.LOGGER_TAG, Constants.ON_SUBSCRIBE)
+            RxLogger.onSubscribe()
             disposableList.add(disposable)
         }
 
         override fun onNext(element: String) {
-            Log.d(Constants.LOGGER_TAG, element)
+            RxLogger.log(element)
         }
 
         override fun onError(e: Throwable) {
-            Log.d(Constants.LOGGER_TAG, Constants.ON_ERROR)
+            RxLogger.onError()
         }
 
         override fun onComplete() {
-            Log.d(Constants.LOGGER_TAG, Constants.ON_COMPLETE)
+            RxLogger.onComplete()
         }
     }
 }
