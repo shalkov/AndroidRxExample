@@ -1,6 +1,6 @@
 package ru.shalkoff.rxjavaexample
 
-object Consts {
+object Constants {
 
     const val LOGGER_TAG = "RX_LOGGER"
 

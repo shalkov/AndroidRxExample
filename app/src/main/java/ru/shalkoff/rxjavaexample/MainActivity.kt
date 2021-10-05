@@ -2,19 +2,22 @@ package ru.shalkoff.rxjavaexample
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
-import io.reactivex.rxjava3.core.Observable
-import io.reactivex.rxjava3.core.Observer
-import io.reactivex.rxjava3.disposables.Disposable
-import java.util.concurrent.TimeUnit
+import ru.shalkoff.rxjavaexample.observable.ObservableExample2
+import ru.shalkoff.rxjavaexample.observable.ObservableExample3
+import ru.shalkoff.rxjavaexample.observable.ObservableExample4
+import ru.shalkoff.rxjavaexample.observable.ObservableExample
 
 class MainActivity : AppCompatActivity() {
-
-    private val observableExample1 = ObservableExample1()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        observableExample1.runExample4()
+
+        val observableExample: ObservableExample = ObservableExample4(lifecycle)
+        runExample(observableExample)
+    }
+
+    private fun runExample(observableExample: ObservableExample) {
+        observableExample.run()
     }
 }
