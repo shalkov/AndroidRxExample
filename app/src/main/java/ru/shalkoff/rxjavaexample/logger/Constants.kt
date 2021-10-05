@@ -1,4 +1,4 @@
-package ru.shalkoff.rxjavaexample
+package ru.shalkoff.rxjavaexample.logger
 
 object Constants {
 

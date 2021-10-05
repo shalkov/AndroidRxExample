@@ -7,9 +7,9 @@ import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.Disposable
 import io.reactivex.rxjava3.schedulers.Schedulers
-import ru.shalkoff.rxjavaexample.Constants
-import ru.shalkoff.rxjavaexample.observable.BaseLifecycleObserver
-import ru.shalkoff.rxjavaexample.observable.RxLogger
+import ru.shalkoff.rxjavaexample.logger.Constants
+import ru.shalkoff.rxjavaexample.base.BaseLifecycleObserver
+import ru.shalkoff.rxjavaexample.logger.RxLogger
 import java.util.concurrent.Callable
 import java.util.concurrent.TimeUnit
 

@@ -1,9 +1,9 @@
-package ru.shalkoff.rxjavaexample.observable
+package ru.shalkoff.rxjavaexample.base
 
 import io.reactivex.rxjava3.core.Observer
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.disposables.Disposable
-import ru.shalkoff.rxjavaexample.Constants
+import ru.shalkoff.rxjavaexample.logger.RxLogger
 
 class BaseStringObserver(disposableList: CompositeDisposable){
 

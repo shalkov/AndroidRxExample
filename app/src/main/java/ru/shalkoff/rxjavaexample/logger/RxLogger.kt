@@ -1,7 +1,6 @@
-package ru.shalkoff.rxjavaexample.observable
+package ru.shalkoff.rxjavaexample.logger
 
 import android.util.Log
-import ru.shalkoff.rxjavaexample.Constants
 
 /**
  * Логгер событий

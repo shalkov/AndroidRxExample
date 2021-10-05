@@ -1,4 +1,4 @@
-package ru.shalkoff.rxjavaexample.observable
+package ru.shalkoff.rxjavaexample.base
 
 /**
  * Интерфейс с функцией запуска

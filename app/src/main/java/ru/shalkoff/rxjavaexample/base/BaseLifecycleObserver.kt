@@ -1,4 +1,4 @@
-package ru.shalkoff.rxjavaexample.observable
+package ru.shalkoff.rxjavaexample.base
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver

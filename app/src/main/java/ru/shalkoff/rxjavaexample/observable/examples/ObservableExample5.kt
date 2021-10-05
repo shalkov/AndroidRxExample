@@ -2,8 +2,8 @@ package ru.shalkoff.rxjavaexample.observable.examples
 
 import androidx.lifecycle.Lifecycle
 import io.reactivex.rxjava3.core.Observable
-import ru.shalkoff.rxjavaexample.observable.BaseLifecycleObserver
-import ru.shalkoff.rxjavaexample.observable.RxLogger
+import ru.shalkoff.rxjavaexample.base.BaseLifecycleObserver
+import ru.shalkoff.rxjavaexample.logger.RxLogger
 
 class ObservableExample5(lifecycle: Lifecycle) : BaseLifecycleObserver(lifecycle) {
 

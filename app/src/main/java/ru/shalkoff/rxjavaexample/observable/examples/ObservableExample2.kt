@@ -2,7 +2,7 @@ package ru.shalkoff.rxjavaexample.observable.examples
 
 import androidx.lifecycle.Lifecycle
 import io.reactivex.rxjava3.core.Observable
-import ru.shalkoff.rxjavaexample.observable.BaseLifecycleObserver
+import ru.shalkoff.rxjavaexample.base.BaseLifecycleObserver
 import java.lang.NullPointerException
 import java.util.concurrent.TimeUnit
 
