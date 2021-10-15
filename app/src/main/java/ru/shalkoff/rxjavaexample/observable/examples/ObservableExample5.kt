@@ -29,5 +29,9 @@ class ObservableExample5(lifecycle: Lifecycle) : BaseLifecycleObserver(lifecycle
         observableDefer.subscribe {
             RxLogger.log(it)
         }
+        one = "0001" // Меняем значение переменной ещё раз
+        observableDefer.subscribe {
+            RxLogger.log(it)
+        }
     }
 }
